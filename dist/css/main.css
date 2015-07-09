@@ -19,9 +19,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
-
 blockquote, q {
   quotes: none; }
 
@@ -46,15 +43,28 @@ table {
 body {
   font-family: Warehouse Gothic, sans-serif; }
 
-.serif {
-  font-family: Georgia, serif; }
+article {
+  padding: 1em; }
 
 h1 {
-  font-size: 4em;
+  font-size: 2em;
+  font-weight: bold;
   color: #ff0000; }
 
 p {
   line-height: 1.5em; }
+
+.serif {
+  font-family: Georgia, serif; }
+
+.code {
+  font-family: monospace; }
+
+ol {
+  list-style: normal;
+  margin-left: 2em; }
+  ol li {
+    margin: 1em; }
 
 html {
   height: 100%; }
@@ -96,14 +106,14 @@ html {
 
   @-webkit-keyframes bounce {
     from {
-      top: -1em; }
+      top: 0em; }
 
     to {
       top: 2em; } }
 
   @keyframes bounce {
     from {
-      top: -1em; }
+      top: 0em; }
 
     to {
       top: 2em; } }
@@ -131,7 +141,7 @@ html {
     Transform: scale(1, 8) translateY(-.125em);
     margin: 3em auto;
     letter-spacing: .3em;
-    text-shadow: 0px 0px .5px #0000ff, 0px 0px .5px #0000ff, 0px 0px .5px #0000ff; }
+    text-shadow: 0px 0px .5px #0000ff, 0px 0px .5px #0000ff, 0px 0px .5px #0000ff, 0px 0px .5px #0000ff; }
     #hero h1:after {
       content: " ";
       background-color: #0000ff;
@@ -151,7 +161,7 @@ html {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    width: 50%;
+    width: 70%;
     margin: auto;
     margin-bottom: 2em;
     color: #0000ff;
@@ -195,10 +205,14 @@ html {
     top: -1em; }
   #hero .bounce {
     position: relative;
-    top: -1em;
+    top: 1em;
     -webkit-animation-name: bounce;
             animation-name: bounce;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
     -webkit-animation-duration: .5s;
             animation-duration: .5s;
-    -webkit-animation-iteration-count: 10;
-            animation-iteration-count: 10; }
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate; }

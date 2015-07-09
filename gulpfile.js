@@ -5,7 +5,7 @@ var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     uglify      = require('gulp-uglify'),
     jshint      = require('gulp-jshint'),
-    scsslint    = require('gulp-scss-lint'),
+    //scsslint    = require('gulp-scss-lint'),
     cache       = require('gulp-cached'),
     prefix      = require('gulp-autoprefixer'),
     browserSync = require('browser-sync'),
@@ -66,11 +66,11 @@ gulp.task('js', function() {
     .pipe(reload({stream:true}));
 });
 
-gulp.task('scss-lint', function() {
-  gulp.src('scss/**/*.scss')
-    .pipe(cache('scsslint'))
-    .pipe(scsslint());
-});
+// gulp.task('scss-lint', function() {
+//   gulp.src('scss/**/*.scss')
+//     .pipe(cache('scsslint'))
+//     .pipe(scsslint());
+// });
 
 gulp.task('minify-html', function() {
     var opts = {

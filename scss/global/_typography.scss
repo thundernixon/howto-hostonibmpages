@@ -14,16 +14,36 @@ body {
 	font-family: Warehouse Gothic, sans-serif;
 }
 
-.serif {
-	font-family: Georgia, serif;
+article {
+	padding: 1em;
 }
 
+
 h1 {
-	font-size: 4em;
+	font-size: 2em;
+	font-weight: bold;
 	color: $red;
 	// transform: scale(1,5);
 }
 
 p {
 	line-height: 1.5em;
+}
+
+.serif {
+	font-family: Georgia, serif;
+}
+
+.code {
+	font-family: monospace;
+}
+
+ol {
+	list-style: normal;
+	margin-left: 2em;
+
+	li {
+		margin: 1em;
+
+	}
 }
