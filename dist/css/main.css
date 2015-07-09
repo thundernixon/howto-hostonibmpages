@@ -107,17 +107,21 @@ html {
 
   @-webkit-keyframes bounce {
     from {
-      Transform: translateY(-1em); }
+      -webkit-transform: translateY(3em);
+              transform: translateY(3em); }
 
     to {
-      Transform: translateY(1em); } }
+      -webkit-transform: translateY(4em);
+              transform: translateY(4em); } }
 
   @keyframes bounce {
     from {
-      Transform: translateY(-1em); }
+      -webkit-transform: translateY(3em);
+              transform: translateY(3em); }
 
     to {
-      Transform: translateY(1em); } }
+      -webkit-transform: translateY(4em);
+              transform: translateY(4em); } }
  }
   #hero div:first-child {
     -webkit-box-flex: 1;
@@ -204,7 +208,9 @@ html {
             align-self: end; }
   #hero .bounce {
     position: relative;
-    Transform: translateY(-1em);
+    -webkit-transform: translateY(-1em);
+        -ms-transform: translateY(-1em);
+            transform: translateY(-1em);
     -webkit-animation-name: bounce;
             animation-name: bounce;
     -webkit-animation-timing-function: ease-in;

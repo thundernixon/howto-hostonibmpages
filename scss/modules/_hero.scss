@@ -139,21 +139,31 @@ html {
 		//bounce animation
 		position:relative; 
 		//top:1em; 
-		Transform: translateY(-1em);
+		transform: translateY(-1em);
 		animation-name: bounce;
     	animation-timing-function: ease-in;
 		animation-duration: .5s;
 		animation-iteration-count: infinite;
     	animation-direction: alternate;
 	}
+
 	@keyframes bounce {
 		from { 
-			Transform: translateY(-1em);
+			transform: translateY(3em);
 		}
 		to { 
-			Transform: translateY(1em);
+			transform: translateY(4em); 
 		}
 	}
 	
 
 }
+
+	// @keyframes bounce {
+	// 	from { 
+	// 		Transform: translateY(3em);
+	// 	}
+	// 	to { 
+	// 		Transform: translateY(4em); 
+	// 	}
+	// }
