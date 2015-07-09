@@ -39,7 +39,7 @@ html {
 		//text-decoration: underline;
   Transform: scale(1, 8) translateY(-.125em);
 		margin: 3em auto;
-		letter-spacing:.3em;
+		letter-spacing:.2em;
 		text-shadow:    
 		// -1px -1px 0 $blue,
   //   	1px -1px 0 $blue,
@@ -95,7 +95,8 @@ html {
 		font-weight: bold;
 		color: $blue;
 		max-width: 300px;
-		margin: auto;
+		margin: auto auto 1em;
+
 
 		@media screen and (max-width: 600px) {
 			font-size: .75em;
@@ -129,15 +130,16 @@ html {
 		align-self: end;
 
 		//bounce animation
-		position:relative; 
-		top:-1em; 
+		// position:relative; 
+		// top:-1em; 
 		// left:25%;
 	}
 
 	.bounce {
 		//bounce animation
 		position:relative; 
-		top:1em; 
+		//top:1em; 
+		Transform: translateY(-1em);
 		animation-name: bounce;
     	animation-timing-function: ease-in;
 		animation-duration: .5s;
@@ -146,10 +148,10 @@ html {
 	}
 	@keyframes bounce {
 		from { 
-			top:0em; 
+			Transform: translateY(-1em);
 		}
 		to { 
-			top:2em; 
+			Transform: translateY(1em);
 		}
 	}
 	
