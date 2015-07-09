@@ -104,24 +104,6 @@ html {
 
     100% {
       letter-spacing: 0; } }
-
-  @-webkit-keyframes bounce {
-    from {
-      -webkit-transform: translateY(3em);
-              transform: translateY(3em); }
-
-    to {
-      -webkit-transform: translateY(4em);
-              transform: translateY(4em); } }
-
-  @keyframes bounce {
-    from {
-      -webkit-transform: translateY(3em);
-              transform: translateY(3em); }
-
-    to {
-      -webkit-transform: translateY(4em);
-              transform: translateY(4em); } }
  }
   #hero div:first-child {
     -webkit-box-flex: 1;
@@ -208,9 +190,9 @@ html {
             align-self: end; }
   #hero .bounce {
     position: relative;
-    -webkit-transform: translateY(-1em);
-        -ms-transform: translateY(-1em);
-            transform: translateY(-1em);
+    -webkit-transform: translateY(-2em);
+        -ms-transform: translateY(-2em);
+            transform: translateY(-2em);
     -webkit-animation-name: bounce;
             animation-name: bounce;
     -webkit-animation-timing-function: ease-in;
@@ -221,3 +203,21 @@ html {
             animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
             animation-direction: alternate; }
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em); }
+
+  to {
+    -webkit-transform: translateY(0em);
+            transform: translateY(0em); } }
+
+@keyframes bounce {
+  from {
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em); }
+
+  to {
+    -webkit-transform: translateY(0em);
+            transform: translateY(0em); } }
