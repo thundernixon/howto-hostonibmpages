@@ -55,8 +55,7 @@ p {
 em {
 	font-family: 'Warehouse Gothic', sans-serif;
 	font-style: italic;
-	font-size: .9em;
-	color: $blue;
+
 }
 
 .serif {
@@ -68,23 +67,25 @@ em {
   background-color: rgba($blue, .025);
   color: blue;
   font-size: .9em;
-  padding: .35em 1em .25em .5em;
+  padding: .25em 1em .25em 0;
   border: 1px solid blue;
-  border-top: 2px solid blue;
-  border-left: 2px solid blue;
+  //border-top: 2px solid blue;
+  border-left: 2em solid blue;
 
 	&::before{
 		content: "$";
 		position: relative;
-		left: -.5em;
-		background-color: $blue;
+		left: -2em;
+		// background-color: $blue;
 		color: $white;
-		padding: .5em .5em .5em 1em;
+		padding: .5em 0em .5em 1em;
+		margin-right: -1.25em;
 	}
 }
 
 span.code {
   padding: 0 .25em;
+	border-left: 1px solid blue;
 
 	&::before {
 		content: none;

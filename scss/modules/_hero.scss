@@ -31,6 +31,12 @@ html {
 		padding-top: 3em;
 		max-width: 60%;
 
+		@media screen and (max-width: 600px) {
+			max-width: 75%;
+			padding-top: 3em;
+			margin-bottom: 0;
+		}
+
 		@media screen and (max-width: 350px) {
 			padding-top: 3em;
 			margin-bottom: 0;
@@ -68,13 +74,16 @@ html {
 			}
 
   		@media screen and (max-width: 600px) {
-				font-size: 1em;
+				color: $blue;
+				text-shadow: none;
+				//transform: scale(1, 12) translateY(-.125em);
+				font-size: .75em;
 				margin: 1em auto;
 			}
 
 			@media screen and (max-width: 350px) {
-				font-size: .75em;
-				transform: scale(1, 5);
+				font-size: .5em;
+				transform: scale(1, 12);
 				margin: 3em auto;
 			}
 	}
@@ -103,11 +112,11 @@ html {
 
 		@media screen and (max-width: 600px) {
 			font-size: 1em;
-			margin: .75em auto 0;
+			margin: 2em auto 1em;
 		}
 
 		@media screen and (max-width: 350px) {
-			font-size: 1.25em;
+			font-size: 1em;
 		}
 	}
 
@@ -167,15 +176,10 @@ html {
 
 }
 
-		@keyframes fadein {
+	@keyframes fadein {
 		0% {opacity: 0;}
 		100% {opacity: 1;}
 	}
-
-	// @keyframes bounceappear {
-	// 0% {opacity: 0;}
-	// 100% {opacity: 1;}
-	// }
 
 
 	@keyframes bounce {
@@ -203,8 +207,10 @@ html {
 	@keyframes turnonscale {
 		from {
 			transform: scale(6,0);
+			outline: 1em solid $white;
 		}
 		to {
 			transform: scale(1,1);
+			outline: 1em solid $blue;
 		}
 	}

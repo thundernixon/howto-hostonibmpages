@@ -5,7 +5,7 @@
 eric/tools/css/reset/)
  * http://cssreset.com
  */
-html, body, ol li:before, article h1, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, ol li:before, article h1, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, article em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -62,11 +62,9 @@ p {
   line-height: 1.5em;
   margin-bottom: 1em; }
 
-em {
+em, article em {
   font-family: 'Warehouse Gothic', sans-serif;
-  font-style: italic;
-  font-size: .9em;
-  color: #0000ff; }
+  font-style: italic; }
 
 .serif {
   font-family: 'Source Serif Pro', serif; }
@@ -76,20 +74,20 @@ em {
   background-color: rgba(0, 0, 255, 0.025);
   color: blue;
   font-size: .9em;
-  padding: .35em 1em .25em .5em;
+  padding: .25em 1em .25em 0;
   border: 1px solid blue;
-  border-top: 2px solid blue;
-  border-left: 2px solid blue; }
+  border-left: 2em solid blue; }
   .code::before {
     content: "$";
     position: relative;
-    left: -.5em;
-    background-color: #0000ff;
+    left: -2em;
     color: #ffffff;
-    padding: .5em .5em .5em 1em; }
+    padding: .5em 0em .5em 1em;
+    margin-right: -1.25em; }
 
 span.code {
-  padding: 0 .25em; }
+  padding: 0 .25em;
+  border-left: 1px solid blue; }
   span.code::before {
     content: none; }
 
@@ -139,6 +137,11 @@ html {
     margin: 10% auto -10%;
     padding-top: 3em;
     max-width: 60%; }
+    @media screen and (max-width: 600px) {
+      #hero div:first-child {
+        max-width: 75%;
+        padding-top: 3em;
+        margin-bottom: 0; } }
     @media screen and (max-width: 350px) {
       #hero div:first-child {
         padding-top: 3em;
@@ -168,14 +171,16 @@ html {
         margin: 2em auto 3em; } }
     @media screen and (max-width: 600px) {
       #hero h1 {
-        font-size: 1em;
+        color: #0000ff;
+        text-shadow: none;
+        font-size: .75em;
         margin: 1em auto; } }
     @media screen and (max-width: 350px) {
       #hero h1 {
-        font-size: .75em;
-        -webkit-transform: scale(1, 5);
-            -ms-transform: scale(1, 5);
-                transform: scale(1, 5);
+        font-size: .5em;
+        -webkit-transform: scale(1, 12);
+            -ms-transform: scale(1, 12);
+                transform: scale(1, 12);
         margin: 3em auto; } }
   #hero h2 {
     -webkit-box-flex: 1;
@@ -198,10 +203,10 @@ html {
     @media screen and (max-width: 600px) {
       #hero h2 {
         font-size: 1em;
-        margin: .75em auto 0; } }
+        margin: 2em auto 1em; } }
     @media screen and (max-width: 350px) {
       #hero h2 {
-        font-size: 1.25em; } }
+        font-size: 1em; } }
   #hero p {
     font-weight: bold;
     color: #0000ff;
@@ -300,20 +305,24 @@ html {
 @-webkit-keyframes turnonscale {
   from {
     -webkit-transform: scale(6, 0);
-            transform: scale(6, 0); }
+            transform: scale(6, 0);
+    outline: 1em solid #ffffff; }
 
   to {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1); } }
+            transform: scale(1, 1);
+    outline: 1em solid #0000ff; } }
 
 @keyframes turnonscale {
   from {
     -webkit-transform: scale(6, 0);
-            transform: scale(6, 0); }
+            transform: scale(6, 0);
+    outline: 1em solid #ffffff; }
 
   to {
     -webkit-transform: scale(1, 1);
-            transform: scale(1, 1); } }
+            transform: scale(1, 1);
+    outline: 1em solid #0000ff; } }
 
 ol {
   list-style: none;
@@ -331,8 +340,9 @@ ol {
       content: counter(li) "."; }
 
 article {
+  font-size: 1.25em;
   color: #333333;
-  max-width: 600px;
+  max-width: 700px;
   margin: 3em auto; }
   article section {
     margin-bottom: 2em 0; }
@@ -341,3 +351,6 @@ article {
     font-weight: bold;
     border-bottom: 5px solid #0000ff;
     margin-bottom: .5em; }
+  article em {
+    font-size: .9em;
+    color: #0000ff; }
