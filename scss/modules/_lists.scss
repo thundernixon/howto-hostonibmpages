@@ -1,9 +1,29 @@
 ol {
-	list-style: normal;
+	list-style: none;
 	margin-left: 2em;
+  counter-reset: li;
 
 	li {
-		margin: 1em;
+		margin: 1em 0 1em;
+    // list-style: none;
+    counter-increment: li;
+
+    &:before {
+
+      //position
+      position:relative;
+      top: 1.25em;
+      left: -2em;
+      //style
+      @extend body;
+      font-weight: bold;
+      color: $red;
+      // @extend h1;
+
+      // counter-increment: counter;
+      content: counter(li)".";
+
+    }
 
 	}
 }
