@@ -94,7 +94,14 @@ span.code {
     content: none; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  -webkit-animation-name: turnonlight;
+          animation-name: turnonlight;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0.98, 0.185);
+          animation-timing-function: cubic-bezier(1, 0, 0.98, 0.185);
+  /* custom */ }
 
 #hero {
   height: 100vh;
@@ -116,7 +123,14 @@ html {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  text-align: center; }
+  text-align: center;
+  -webkit-animation-name: turnonscale;
+          animation-name: turnonscale;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0.98, 0.185);
+          animation-timing-function: cubic-bezier(1, 0, 0.98, 0.185);
+  /* custom */ }
   #hero div:first-child {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -137,7 +151,9 @@ html {
     font-size: 2em;
     color: #ffffff;
     outline: #0000ff;
-    Transform: scale(1, 8) translateY(-.125em);
+    -webkit-transform: scale(1, 8) translateY(-.125em);
+        -ms-transform: scale(1, 8) translateY(-.125em);
+            transform: scale(1, 8) translateY(-.125em);
     margin: 3em auto;
     letter-spacing: .2em;
     text-shadow: 0px 0px .5px #0000ff, 0px 0px .5px #0000ff, 0px 0px .5px #0000ff, 0px 0px .5px #0000ff; }
@@ -167,10 +183,7 @@ html {
     color: #0000ff;
     font-size: 1.5em;
     line-height: 1.5em;
-    font-weight: bold;
-    -webkit-transform: scale(1.5, .75);
-        -ms-transform: scale(1.5, .75);
-            transform: scale(1.5, .75); }
+    font-weight: bold; }
     #hero h2 em {
       font-size: 1.5em; }
     @media screen and (max-width: 600px) {
@@ -260,6 +273,38 @@ html {
     -webkit-transform: translateY(0em);
             transform: translateY(0em);
     opacity: 1; } }
+
+@-webkit-keyframes turnonlight {
+  from {
+    background-color: #000; }
+
+  to {
+    background-color: #ffffff; } }
+
+@keyframes turnonlight {
+  from {
+    background-color: #000; }
+
+  to {
+    background-color: #ffffff; } }
+
+@-webkit-keyframes turnonscale {
+  from {
+    -webkit-transform: scale(6, 0);
+            transform: scale(6, 0); }
+
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes turnonscale {
+  from {
+    -webkit-transform: scale(6, 0);
+            transform: scale(6, 0); }
+
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
 
 ol {
   list-style: none;

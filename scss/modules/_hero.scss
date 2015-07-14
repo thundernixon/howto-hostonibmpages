@@ -1,5 +1,9 @@
 html {
 	height: 100%;
+	//intro animation
+	animation-name: turnonlight;
+	animation-duration: .75s;
+	animation-timing-function: cubic-bezier(1.000, 0.000, 0.980, 0.185); /* custom */
 }
 
 #hero {
@@ -13,6 +17,10 @@ html {
 	flex-wrap: wrap;
 	// flex-direction: column;
 	text-align: center;
+	animation-name: turnonscale;
+	animation-duration: .75s;
+	animation-timing-function: cubic-bezier(1.000, 0.000, 0.980, 0.185); /* custom */
+
 
 
 
@@ -37,7 +45,7 @@ html {
 		color: $white;
 		outline: $blue;
 		//text-decoration: underline;
-  Transform: scale(1, 8) translateY(-.125em);
+  	transform: scale(1, 8) translateY(-.125em);
 		margin: 3em auto;
 		letter-spacing:.2em;
 		text-shadow:
@@ -80,7 +88,7 @@ html {
 		font-size: 1.5em;
 		line-height: 1.5em;
 		font-weight: bold;
-		transform:scale(1.5,.75);
+		// transform:scale(1.5,.75);
 
 
 		em {
@@ -142,7 +150,7 @@ html {
 		transform: translateY(-2em);
 		opacity: 0;
 		animation-name: bounce;
-    	animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
 		animation-duration: .5s;
 		animation-delay: 1s;
 		animation-iteration-count: infinite;
@@ -176,5 +184,23 @@ html {
 			transform: translateY(0em);
 			opacity: 1;
 
+		}
+	}
+
+	@keyframes turnonlight {
+		from {
+			background-color: #000;
+		}
+		to {
+			background-color: $white;
+		}
+	}
+
+	@keyframes turnonscale {
+		from {
+			transform: scale(6,0);
+		}
+		to {
+			transform: scale(1,1);
 		}
 	}
