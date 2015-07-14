@@ -38,7 +38,7 @@ table {
 
 @font-face {
   font-family: 'Warehouse Gothic';
-  src: url('../../fonts/WarehouseSquare1.1.2-RgIt.woff') format('woff');
+  src: url('../../fonts/WarehouseSquare1.1.2-MdIt.woff') format('woff');
   font-weight: 400;
   font-style: italic; }
 
@@ -64,7 +64,9 @@ p {
 
 em {
   font-family: 'Warehouse Gothic', sans-serif;
-  font-style: italic; }
+  font-style: italic;
+  font-size: .9em;
+  color: #0000ff; }
 
 .serif {
   font-family: 'Source Serif Pro', serif; }
