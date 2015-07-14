@@ -333,7 +333,7 @@ ol {
 article {
   color: #333333;
   max-width: 600px;
-  margin: auto; }
+  margin: 3em auto; }
   article section {
     margin-bottom: 2em 0; }
   article h1 {
