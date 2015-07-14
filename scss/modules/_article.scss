@@ -1,0 +1,13 @@
+article {
+  color: $darkgray;
+  max-width: 600px;
+  margin: auto;
+
+  h1{
+    @extend body;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 5px solid $blue;
+    margin-bottom: .5em;
+  }
+}

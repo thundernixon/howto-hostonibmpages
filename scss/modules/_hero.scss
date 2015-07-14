@@ -34,20 +34,20 @@ html {
 		flex-grow: 1;
 		// width: 100%;
 		font-size: 2em;
-		color: $white; 
-		outline: $blue;  
+		color: $white;
+		outline: $blue;
 		//text-decoration: underline;
   Transform: scale(1, 8) translateY(-.125em);
 		margin: 3em auto;
 		letter-spacing:.2em;
-		text-shadow:    
+		text-shadow:
 		// -1px -1px 0 $blue,
   //   	1px -1px 0 $blue,
   //   	-1px 1px 0 $blue,
   //   	1px 1px 0 $blue;
   		0px 0px .5px $blue,
   		0px 0px .5px $blue,
-  		0px 0px .5px $blue, 
+  		0px 0px .5px $blue,
   		0px 0px .5px $blue,;
   		// 5px 1px $white,
   		// 10px 2px $blue;
@@ -100,15 +100,15 @@ html {
 
 		@media screen and (max-width: 600px) {
 			font-size: .75em;
-			
+
 		}
 	}
 
 	.slide {
-		right: 0; 
-		animation: slide 5s; 
+		right: 0;
+		animation: slide 5s;
 		-webkit-animation: slide 5s;
-		    
+
 	}
 
 
@@ -123,15 +123,15 @@ html {
 		align-self: end;
 
 		//bounce animation
-		// position:relative; 
-		// top:-1em; 
+		// position:relative;
+		// top:-1em;
 		// left:25%;
 	}
 
 	.bounce {
 		//bounce animation
-		position:relative; 
-		//top:1em; 
+		position:relative;
+		//top:1em;
 		transform: translateY(-2em);
 		opacity: 0;
 		animation-name: bounce;
@@ -144,7 +144,7 @@ html {
 	}
 
 
-	
+
 
 }
 
@@ -160,14 +160,14 @@ html {
 
 
 	@keyframes bounce {
-		from { 
-			transform: translateY(-2em);
+		from {
+			transform: translateY(-1em);
 			opacity: 0;
-			
+
 		}
-		to { 
-			transform: translateY(0em); 
+		to {
+			transform: translateY(0em);
 			opacity: 1;
-			
+
 		}
 	}
