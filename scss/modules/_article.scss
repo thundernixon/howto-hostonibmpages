@@ -3,6 +3,10 @@ article {
   max-width: 600px;
   margin: auto;
 
+  section {
+    margin-bottom: 2em 0;
+  }
+
   h1{
     @extend body;
     font-size: 1.5em;
