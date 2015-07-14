@@ -153,7 +153,9 @@ html {
     @media screen and (max-width: 350px) {
       #hero h1 {
         font-size: .75em;
-        Transform: scale(1, 5);
+        -webkit-transform: scale(1, 5);
+            -ms-transform: scale(1, 5);
+                transform: scale(1, 5);
         margin: 3em auto; } }
   #hero h2 {
     -webkit-box-flex: 1;
@@ -161,12 +163,16 @@ html {
         -ms-flex-positive: 1;
             flex-grow: 1;
     width: 70%;
-    margin: auto;
-    margin-bottom: 2em;
+    margin: -1em auto 1em;
     color: #0000ff;
-    font-size: 2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
     font-weight: bold;
-    Transform: scale(1.5, .75); }
+    -webkit-transform: scale(1.5, .75);
+        -ms-transform: scale(1.5, .75);
+            transform: scale(1.5, .75); }
+    #hero h2 em {
+      font-size: 1.5em; }
     @media screen and (max-width: 600px) {
       #hero h2 {
         font-size: 1em;
@@ -177,7 +183,7 @@ html {
   #hero p {
     font-weight: bold;
     color: #0000ff;
-    max-width: 300px;
+    max-width: 350px;
     margin: auto auto 1em; }
     @media screen and (max-width: 600px) {
       #hero p {
