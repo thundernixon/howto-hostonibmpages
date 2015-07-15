@@ -353,7 +353,11 @@ article {
     font-size: 1.5em;
     font-weight: bold;
     border-bottom: 5px solid #0000ff;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    position: relative; }
+  article #intro h1 {
+    border-bottom: 0px;
+    color: #0000ff; }
   article em, article footer p, footer article p {
     font-size: .9em;
     color: #0000ff; }
