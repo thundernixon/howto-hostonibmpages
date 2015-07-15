@@ -46,8 +46,8 @@
 
 	<section id="intro">
 		<h1>Why Host on IBM Pages?</h1>
-		<p>'Cause it's super cooool.</p>
-    <p>But more specifically, hosting code on IBM pages can allow you to better experiment and learn as a designer, host clickable prototypes for usability testing, and communicate with your team (by building and sharing a style guide, for example).</p>
+		<!-- <p>'Cause it's super cooool.</p> -->
+    <p>Hosting code on IBM pages can allow you to better experiment and learn as a designer, host clickable prototypes for usability testing, and communicate with your team (by building and sharing a style guide, for example).</p>
 	  <p>If you're already comfortable with the command line and with git, feel free to skip ahead to "How to Host on Pages". Otherwise, let's brush up on some basics!</p>
   </section>
 
@@ -134,6 +134,9 @@
      				</p>
      			</li>
      		</ol>
+        <p>
+          Now that you know the basics of using the command line, you should check out and consider downloading <a href="https://iterm2.com/">iTerm 2</a>. You see front-end developers using it, because it has a bunch of nice features sprinkled in.
+        </p>
       </div>
     </div>
 	</section>
@@ -181,6 +184,81 @@
 
       <div class="section-content">
         <p>If you're comfortable with the basics of the command line and of Git, let's get to hosting!</p>
+        <h2><span>I:</span> Make your project and put git in it</h2>
+        <ol>
+          <li>
+            <p>
+              First, let's set up the project folder. Open up your command line, and navigate to whatever folder you like to make web projects in (for me, that means I start by entering <span class="code">cd code</span>). Then, make a new directory by inputting:
+            </p>
+            <p class="code">
+              mkdir your-project-name
+            </p>
+          </li>
+          <li>
+            <p>
+              Next, go into that directory:
+            </p>
+            <p class="code">
+              cd your-project-name
+            </p>
+          </li>
+          <li>
+            <p>
+              Let's make a git repository in here (a hidden folder that will track your version history):
+            </p>
+            <p class="code">
+              git init
+            </p>
+            The command will respond with <span class="response">Initialized empty Git repository in /Users/yourusername/yourcodeprojectsfolder/your-project-name/.git/</span>
+          </li>
+          <li>
+            <p>
+              I personally like to check to make sure the git folder was created. To do so, input:
+            </p>
+            <p class="code">
+              ls -A
+            </p>
+            <p>
+              If you see a response including the filename <span class="response">.git</span>, you're golden.
+            </p>
+          </li>
+        </ol>
+        <h2><span>II:</span> Set up the project on GitLab</h2>
+        <ol>
+          <li>
+            <p>
+              GitLab
+            </p>
+          </li>
+        </ol>
+        <h2><span>III:</span> Connect your project with GitLab</h2>
+        <ol>
+          <li>
+            <p>
+              Remote add
+            </p>
+          </li>
+        </ol>
+        <h2><span>IV:</span> Connect your GitLab repo with IBM Pages</h2>
+        <ol>
+          <li>
+            <p>
+              Web Hooks
+            </p>
+          </li>
+        </ol>
+        <h2><span>V:</span> View and share your masterpiece</h2>
+        <ol>
+          <li>
+            <p>
+              URL
+            </p>
+
+          </li>
+        </ol>
+        <p>
+          Great Job! You did it. And if you couldn't figure out a specific part, please reach out to me to let me know, so I can improve this tutorial. Ping me a snixon@us.ibm.com, or tweet at me <a href="http://www.twitter.com/thundernixon">@thundernixon</a>.
+        </p>
       </div>
     </div>
 	</section>

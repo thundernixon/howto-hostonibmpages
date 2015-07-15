@@ -64,7 +64,9 @@ em {
 
 .code {
 	font-family: 'Source Code Pro', monospace;
-  background-color: rgba($blue, .025);
+	line-height: 1.5em;
+  // background-color: rgba($blue, .025);
+	background-color: tint( $blue, 3% );
   color: blue;
   font-size: .9em;
   padding: .25em 1em .25em 0;
@@ -84,10 +86,21 @@ em {
 }
 
 span.code {
-  padding: 0 .25em;
-	border-left: 1px solid blue;
+	  padding: 0 .25em;
+		border: 0px solid blue;
 
-	&::before {
-		content: none;
-	}
+		&::before {
+			content: none;
+		}
+}
+
+span.response {
+	@extend .code;
+	color: $darkgray;
+	background-color: tint( $red, 5% );
+}
+
+
+pre{
+	@extend .code;
 }

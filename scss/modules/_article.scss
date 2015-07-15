@@ -27,10 +27,24 @@ article {
     color: $blue;
   }
 
+
+
   em {
     @extend em;
     font-size: .9em;
     color: $blue;
+  }
+  h2 {
+    @extend em;
+    color: $red;
+    font-size: 1.25em;
+    margin: 1em auto -.5em;
+
+    span{
+      background-color: $red;
+      color: $white;
+      padding: .05em .25em;
+    }
   }
 }
 

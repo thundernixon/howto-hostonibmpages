@@ -5,7 +5,7 @@
 eric/tools/css/reset/)
  * http://cssreset.com
  */
-html, body, ol li:before, article h1, label, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, article em, footer p, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, ol li:before, article h1, label, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, article em, article h2, footer p, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -62,22 +62,23 @@ p {
   line-height: 1.5em;
   margin-bottom: 1em; }
 
-em, article em, footer p {
+em, article em, article h2, footer p {
   font-family: 'Warehouse Gothic', sans-serif;
   font-style: italic; }
 
 .serif {
   font-family: 'Source Serif Pro', serif; }
 
-.code {
+.code, span.response, pre {
   font-family: 'Source Code Pro', monospace;
-  background-color: rgba(0, 0, 255, 0.025);
+  line-height: 1.5em;
+  background-color: #f7f7ff;
   color: blue;
   font-size: .9em;
   padding: .25em 1em .25em 0;
   border: 1px solid blue;
   border-left: 2em solid blue; }
-  .code::before {
+  .code::before, span.response::before, pre::before {
     content: "$";
     position: relative;
     left: -2em;
@@ -85,11 +86,15 @@ em, article em, footer p {
     padding: .5em 0em .5em 1em;
     margin-right: -1.25em; }
 
-span.code {
+span.code, span.response {
   padding: 0 .25em;
-  border-left: 1px solid blue; }
-  span.code::before {
+  border: 0px solid blue; }
+  span.code::before, span.response::before {
     content: none; }
+
+span.response {
+  color: #333333;
+  background-color: #fff2f2; }
 
 html {
   height: 100%;
@@ -193,7 +198,7 @@ html {
     font-size: 1.5em;
     line-height: 1.5em;
     font-weight: bold; }
-    #hero h2 em, #hero h2 footer p, footer #hero h2 p {
+    #hero h2 em, #hero h2 article h2, article #hero h2 h2, #hero h2 footer p, footer #hero h2 p {
       font-size: 1.5em; }
     @media screen and (max-width: 1080px) {
       #hero h2 {
@@ -358,9 +363,17 @@ article {
   article #intro h1 {
     border-bottom: 0px;
     color: #0000ff; }
-  article em, article footer p, footer article p {
+  article em, article h2, article footer p, footer article p {
     font-size: .9em;
     color: #0000ff; }
+  article h2 {
+    color: #ff0000;
+    font-size: 1.25em;
+    margin: 1em auto -.5em; }
+    article h2 span {
+      background-color: #ff0000;
+      color: #ffffff;
+      padding: .05em .25em; }
 
 .section-content {
   display: none; }
