@@ -17,7 +17,7 @@ article {
     font-size: 1.5em;
     font-weight: bold;
     border-bottom: 5px solid $blue;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
   }
 
   em {
@@ -25,56 +25,52 @@ article {
     font-size: .9em;
     color: $blue;
   }
+}
 
-  label {
-    float: right;
-    // width: 100%;
-    position: relative;
-    top:-2.9em;
-    @extend body;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: .6em;
-    color: $blue;
+.section-content {
+  display: none;
+}
 
-    &::before{
-      content: "Expand";
+input {
+  position: absolute;
+  left: -9999px;
+
+  &:checked + label {
+    /* awesome styles */
+    // color: $white;
+    &:hover{
+      cursor: zoom-out;
     }
   }
-
-  input {
-    position: absolute;
-    left: -9999px;
-
-
-    // label::before {
-    //   content: "Collapse";
-    // }
-
-    & ~ div.section-content {
-      display: none;
-    }
-
-    &:checked + label {
-      /* awesome styles */
-      // color: $white;
-    }
-    &:checked + label::before {
-    /* styles for an "on" indicator */
-      content: "Collapse";
-
-
-    }
-
-    &:checked ~ div.section-content {
-    /* styles for an "on" indicator */
-      // color: $blue;
-      display: block;
-      animation: collapse .35s;
-      animation-timing-function: ease-out;
-    }
+  &:checked + label::before {
+  /* styles for an "on" indicator */
+    content: "Collapse";
   }
 
+  &:checked ~ .section-content {
+  /* styles for an "on" section*/
+    display: block;
+  }
+}
+
+label {
+  float: right;
+  // width: 100%;
+  position: relative;
+  top:-4.2em;
+  @extend body;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .6em;
+  color: $blue;
+
+  &::before{
+    content: "Expand";
+  }
+
+  &:hover{
+    cursor: zoom-in;
+  }
 }
 
 // @keyframes collapse {
