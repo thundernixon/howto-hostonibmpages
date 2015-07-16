@@ -5,7 +5,7 @@
 eric/tools/css/reset/)
  * http://cssreset.com
  */
-html, body, ol li:before, article h1, label, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, article em, article h2, footer p, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, ol li:before, article h1, label, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, article em, article h2, footer p:first-of-type, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -62,7 +62,7 @@ p {
   line-height: 1.5em;
   margin-bottom: 1em; }
 
-em, article em, article h2, footer p {
+em, article em, article h2, footer p:first-of-type {
   font-family: 'Warehouse Gothic', sans-serif;
   font-style: italic; }
 
@@ -198,7 +198,7 @@ html {
     font-size: 1.5em;
     line-height: 1.5em;
     font-weight: bold; }
-    #hero h2 em, #hero h2 article h2, article #hero h2 h2, #hero h2 footer p, footer #hero h2 p {
+    #hero h2 em, #hero h2 article h2, article #hero h2 h2, #hero h2 footer p:first-of-type, footer #hero h2 p:first-of-type {
       font-size: 1.5em; }
     @media screen and (max-width: 1080px) {
       #hero h2 {
@@ -363,7 +363,7 @@ article {
   article #intro h1 {
     border-bottom: 0px;
     color: #0000ff; }
-  article em, article h2, article footer p, footer article p {
+  article em, article h2, article footer p:first-of-type, footer article p:first-of-type {
     font-size: .9em;
     color: #0000ff; }
   article h2 {
@@ -417,12 +417,14 @@ footer {
   border-bottom: 3em solid #0000ff; }
   footer p {
     color: #ffffff;
-    margin: 1em;
-    -webkit-transform: scale(.75, 6) translateY(.25em);
-        -ms-transform: scale(.75, 6) translateY(.25em);
-            transform: scale(.75, 6) translateY(.25em);
-    letter-spacing: .2em;
-    opacity: .75; }
+    opacity: .75;
+    margin: 5em; }
+    footer p:first-of-type {
+      -webkit-transform: scale(.75, 6) translateY(.25em);
+          -ms-transform: scale(.75, 6) translateY(.25em);
+              transform: scale(.75, 6) translateY(.25em);
+      letter-spacing: .2em;
+      margin: 1em; }
     footer p a {
       color: #ffffff;
       text-decoration: none;
