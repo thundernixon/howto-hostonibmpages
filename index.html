@@ -48,7 +48,11 @@
 		<h1>Why Host on IBM Pages?</h1>
 		<!-- <p>'Cause it's super cooool.</p> -->
     <p>Hosting code on IBM pages can allow you to better experiment and learn as a designer, host clickable prototypes for usability testing, and communicate with your team (by building and sharing a style guide, for example).</p>
-	  <p>If you're already comfortable with the command line and with git, feel free to skip ahead to "How to Host on Pages". Otherwise, let's brush up on some basics!</p>
+	  <p>
+      Note: this is specifically useful for projects internal to IBM, as you won't be able to share it with people outside the firewall. If you'd like to host projects on GitHub, they have <a href="https://pages.github.com/" target="_blank">an excellent explanation</a> of how to do so.
+    </p>
+
+    <p>If you're already comfortable with the command line and with git, feel free to skip ahead to "How to Host on Pages". Otherwise, let's brush up on some prerequisites!</p>
   </section>
 
 	<section >
@@ -142,7 +146,7 @@
 	</section>
 
 	<section>
-   	<h1>Git Basics</h1>
+   	<h1>If you haven't used Git before...</h1>
     <div>
       <!-- toggle open / closed -->
       <input id="toggle-2" type="checkbox">
@@ -150,26 +154,22 @@
       <!-- toggle open / closed -->
 
       <div class="section-content">
-        <p>The command line allows you to do some awesome things with computers and the internet. It's intimidating at first, but once you know a few basic commands, it becomes pretty friendly, pretty quickly. Like your mom used to say when you were trying food for the first time, "Try it, you'll love it!"</p>
+        <p>Git is something I'm still learning, but it's a great way to store and sync code project files online. It's main uses are for version control and collaboration, but I sheepishly admit that I have barely taken advantage of those aspects, as of the writing of this tutorial.</p>
         <p>Note: these directions are specifically for Mac OSX users.</p>
         <ol>
           <li>
             <p>
-              Open the "Terminal" app.
-            </p>
-          </li>
-          <li>
-            <p>
-              Type in:
-            </p>
-            <p class="code">
-              ls
+              Go to <a href="http://sourceforge.net/projects/git-osx-installer/?source=typ_redirect" target="_blank">this sourceforge project page</a> and download the download.
             </p>
             <p>
-              This will tell you all the files that exist in whatever directory you're currently in ("directory" is just a fancy term for "folder").
+              This is Git 2.2.1 for Mac OSX. You can install it like any other application, with the standard Mac wizard.
             </p>
           </li>
+
         </ol>
+        <p>
+          That's it; you should be ready to go!
+        </p>
       </div>
     </div>
   </section>
@@ -222,42 +222,220 @@
               If you see a response including the filename <span class="response">.git</span>, you're golden.
             </p>
           </li>
+          <li>
+            <p>
+              Let's put another file in the project, because you'll need it soon. Input:
+            </p>
+            <p class="code">
+              touch README
+            </p>
+            <p>
+              This will create a file called "README."
+            </p>
+          </li>
+          <li>
+            <p>
+              To make sure our git repo is updated with the new file, input:
+            </p>
+            <p class="code">
+              git add .
+            </p>
+            <p>
+              This will add all new files and updated files into your repo. (You'll do this each time you want to update and send your project to the GitLab repo).
+            </p>
+            <p>
+              Next, you should write a short note to say what this update does. Input this:
+            </p>
+            <p class="code">
+              git commit -m "First commit."
+            </p>
+            <p>
+              (Your subsequent commit messages should be more specfic, saying things like "Adds hero image to homepage" or "Fixes checkbox bug in user form").
+            </p>
+            <p>
+              The last piece of updated your repo is simple. Just push it:
+            </p>
+            <p class="code">
+              git push
+            </p>
+          </li>
         </ol>
         <h2><span>II:</span> Set up the project on GitLab</h2>
         <ol>
           <li>
             <p>
-              GitLab
+              Next, go to GitLab at <a href="https://git.design.ibm.com/" target="_blank">https://git.design.ibm.com/</a>
             </p>
           </li>
+          <li>
+            <p>
+              Log in, if you need to.
+            </p>
+          </li>
+          <li>
+            <p>
+              On your logged-in homepage, click the green "+ New Project" button.
+            </p>
+            <p>
+              You'll be brought to a New Project configuration page.
+            </p>
+          <li>
+            <p>
+              Give the project a Name and Description. If you want, choose what access to give the project.
+            </p>
+            <p>
+              No matter what access you select, this project will only be visible to people inside the IBM firewall. The Access you choose here is specific to how you want to share this code with other IBMers. It can be changed later.
+            </p>
+          </li>
+          <li>
+            <p>
+              Click "Create Project."
+            </p>
+
+          </li>
+          <p>
+            Nice! You've created your project. You'll now be on a page that gives you some instructions for what to do in the command line. Keep that page open.
+          </p>
         </ol>
         <h2><span>III:</span> Connect your project with GitLab</h2>
         <ol>
           <li>
             <p>
-              Remote add
+              Go back into your terminal again. Get to your project directory if you're not already in there. In that, input:
+            </p>
+            <p class="code">
+git remote add origin git@git.design.ibm.com:yourgitlabusername/your-project-name.git
+            </p>
+            <p>
+              <em>(And be sure to put your own details in there, or copy the appropriate line from the GitLab page)</em>
+            </p>
+            <p>
+              This will connect your local project with the project on GitLab.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now you're ready to push your project up to GitLab! To beam it up, input:
+            </p>
+            <p class="code">
+              git push -u origin master
+            </p>
+          </li>
+          <li>
+            <p>
+              While we're at it, let's make a Hello World test for the new site. Still in your local project folder, input:
+            </p>
+            <p class="code">
+              touch index.html
+            </p>
+            <p>
+              This creates a basic HTML file. Let's get fancy and edit it right in the command line. Input:
+            </p>
+            <p class="code">
+              nano index.html
+            </p>
+            <p>
+              This will pull up a simple text editor right in your command line. It might be weird at first, but it's pretty convenient and easy.
+            </p>
+            <p>
+              In here, just type in <span class="code">Hello World</span> (or whatever), and then press <em>Control+X</em>.
+            </p>
+            <p>
+              It'll ask if you want to save. Press your <em>Y</em> key, type in a new title if you really want to, and then press your <em>return</em> key.
+            </p>
+          </li>
+          <li>
+            <p>
+              Great, you have an index file! To make sure it goes into your local and remote repos, do the following commands:
+            </p>
+            <p class="code">
+              git add .
+            </p>
+            <p class="code">
+              git command -m "Adds hello world test in index.html file"
+            </p>
+            <p class="code">
+              git push
             </p>
           </li>
         </ol>
         <h2><span>IV:</span> Connect your GitLab repo with IBM Pages</h2>
+
         <ol>
           <li>
             <p>
-              Web Hooks
+              Now it's time to connect your GitLab repo with IBM Pages, to make the real magic happen.
+            </p>
+            <p>
+              Go GitLab, and navigate into your project.
             </p>
           </li>
+          <li>
+            <p>
+              Find the "Settings" tab in the second-top-nav. Click it.
+            </p>
+          </li>
+          <li>
+            <p>
+              In the left nav of Settings, find "Web Hooks." Click it.
+            </p>
+          </li>
+          <li>
+            <p>
+              Okay, so be careful here; you need to be specific. In the "URL" field, paste <span class="code">http://pages.design.ibm.com/deploy</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              Make sure the "Push events" checkbox is selected (it should be by default). Click the button "Add Web Hook."
+            </p>
+          </li>
+          <li>
+            <p>
+              The URL you just entered will add to a "Web hooks" space at the bottom of this screen. Next to it, click the button "Test Hook."
+            </p>
+            <p>
+              Nothing much will happen. That's okay; your web hook is set up!
+            </p>
+          </li>
+
         </ol>
         <h2><span>V:</span> View and share your masterpiece</h2>
         <ol>
           <li>
             <p>
-              URL
+              Select and copy your GitLab project's main URL from the URL bar.
             </p>
-
+            <p>
+              (For this project, that looks like <span class="code">https://git.design.ibm.com/snixon/howto-hostonpages</span>).
+            </p>
           </li>
+          <li>
+            <p>
+              Open a new tab. Paste your copied URL into the URL bar. Before entering it
+            </p>
+            <p>
+              swap out <span class="code">git</span> with <span class="code">pages</span>
+            </p>
+            <p>
+              swap out <span class="code">https</span> with <span class="code">http</span>
+            </p>
+            <p>
+              ...and add <span class="code">/master</span> to the end of the URL. Now go to the URL.
+            </p>
+            <p>
+              Note: If you are further along in a project, you may also have to add <span class="code">/dist</span> to the URL, to get what you're expecting. (Extra note: to reach <span class="code">/dist</span>, you may have to remove it from a .gitignore file, if you have one).
+            </p>
+            <p>
+              (For this project, this all looks like <span class="code">http://pages.design.ibm.com/snixon/howto-hostonpages/master</span>).
+            </p>
+          </li>
+          <p>
+            You should now be seeing your "Hello World" test.
+          </p>
         </ol>
         <p>
-          Great Job! You did it. And if you couldn't figure out a specific part, please reach out to me to let me know, so I can improve this tutorial. Ping me a snixon@us.ibm.com, or tweet at me <a href="http://www.twitter.com/thundernixon">@thundernixon</a>.
+          Great Job! You did it. And if you couldn't figure out a specific part, please reach out to me to let me know, so I can improve this tutorial. Ping me at snixon@us.ibm.com, or tweet at me: <a href="http://www.twitter.com/thundernixon">@thundernixon</a>.
         </p>
       </div>
     </div>

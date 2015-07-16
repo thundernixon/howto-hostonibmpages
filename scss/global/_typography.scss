@@ -69,19 +69,20 @@ em {
 	background-color: tint( $blue, 3% );
   color: blue;
   font-size: .9em;
-  padding: .25em 1em .25em 0;
+  padding: .25em 1em .25em .5em;
   border: 1px solid blue;
   //border-top: 2px solid blue;
   border-left: 2em solid blue;
 
+
 	&::before{
 		content: "$";
 		position: relative;
-		left: -2em;
+		left: -2.6em;
 		// background-color: $blue;
 		color: $white;
 		padding: .5em 0em .5em 1em;
-		margin-right: -1.25em;
+		margin-right: -1.6em;
 	}
 }
 
@@ -97,7 +98,7 @@ span.code {
 span.response {
 	@extend .code;
 	color: $darkgray;
-	background-color: tint( $red, 5% );
+	background-color: tint( $blue, 5% );
 }
 
 
