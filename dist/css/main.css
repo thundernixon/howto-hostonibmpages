@@ -434,11 +434,13 @@ footer {
   background-color: #0000ff;
   text-align: center;
   padding: 1em 0;
-  border-bottom: 3em solid #0000ff; }
+  border-bottom: 3em solid #0000ff;
+  position: relative;
+  top: 2em; }
   footer p {
     color: #ffffff;
     opacity: .75;
-    margin: 5em; }
+    margin: 4.8em auto 1em; }
     footer p:first-of-type {
       -webkit-transform: scale(.75, 6) translateY(.25em);
           -ms-transform: scale(.75, 6) translateY(.25em);
