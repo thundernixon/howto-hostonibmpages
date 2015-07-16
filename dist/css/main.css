@@ -62,6 +62,15 @@ p {
   line-height: 1.5em;
   margin-bottom: 1em; }
 
+a {
+  color: #0000ff;
+  -webkit-transition: .25s ease;
+          transition: .25s ease; }
+  a:hover {
+    color: #ff0000;
+    -webkit-transition: .25s ease;
+            transition: .25s ease; }
+
 em, article em, article h2, footer p:first-of-type {
   font-family: 'Warehouse Gothic', sans-serif;
   font-style: italic; }
@@ -379,21 +388,6 @@ article {
 .section-content {
   display: none; }
 
-input {
-  position: absolute;
-  left: -9999px; }
-  input:checked + label {
-    /* awesome styles */ }
-    input:checked + label:hover {
-      cursor: -webkit-zoom-out;
-      cursor: zoom-out; }
-  input:checked + label::before {
-    /* styles for an "on" indicator */
-    content: "Collapse"; }
-  input:checked ~ .section-content {
-    /* styles for an "on" section*/
-    display: block; }
-
 label {
   float: right;
   position: relative;
@@ -401,12 +395,38 @@ label {
   font-weight: bold;
   text-transform: uppercase;
   font-size: .6em;
-  color: #0000ff; }
+  color: #0000ff;
+  -webkit-transition: .25s ease;
+          transition: .25s ease; }
   label::before {
     content: "Expand"; }
   label:hover {
     cursor: -webkit-zoom-in;
-    cursor: zoom-in; }
+    cursor: zoom-in;
+    color: #ffffff;
+    text-shadow: -1px -1px 5px #ff0000, 1px 1px 5px #ff0000, 1px 1px 5px #ff0000;
+    -webkit-transition: .25s ease;
+            transition: .25s ease; }
+
+input {
+  position: absolute;
+  left: -9999px; }
+  input:checked + label {
+    /* awesome styles */
+    -webkit-transition: .25s ease;
+            transition: .25s ease; }
+    input:checked + label:hover {
+      cursor: -webkit-zoom-out;
+      cursor: zoom-out;
+      color: #333333;
+      -webkit-transition: .25s ease;
+              transition: .25s ease; }
+  input:checked + label::before {
+    /* styles for an "on" indicator */
+    content: "Collapse"; }
+  input:checked ~ .section-content {
+    /* styles for an "on" section*/
+    display: block; }
 
 footer {
   width: 100%;
@@ -429,3 +449,6 @@ footer {
       color: #ffffff;
       text-decoration: none;
       text-shadow: 1px 1px 10px #ff0000, 1px 1px 10px #ff0000; }
+      footer p a:hover {
+        color: #ff0000;
+        text-shadow: -1px -1px 5px #ffffff, -1px -1px 5px #ffffff, 1px 1px 5px #ffffff, 1px 1px 5px #ffffff; }
