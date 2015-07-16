@@ -33,6 +33,12 @@
 
 body {
 	font-family: 'Warehouse Gothic', sans-serif;
+	//tabular numbers
+	font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -ms-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
 }
 
 article {

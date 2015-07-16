@@ -48,7 +48,12 @@ table {
   font-weight: 600; }
 
 body, ol li:before, article h1, label {
-  font-family: 'Warehouse Gothic', sans-serif; }
+  font-family: 'Warehouse Gothic', sans-serif;
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -ms-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum"; }
 
 article {
   padding: 1em; }
