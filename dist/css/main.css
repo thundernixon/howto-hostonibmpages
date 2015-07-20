@@ -54,6 +54,12 @@ body, ol li:before, article h1, label {
   -ms-font-feature-settings: "tnum";
   -webkit-font-feature-settings: "tnum";
   font-feature-settings: "tnum"; }
+  body::-moz-selection, article h1::-moz-selection, label::-moz-selection {
+    background: rgba(255, 0, 0, 0.5);
+    color: #333333; }
+  body::selection, article h1::selection, label::selection {
+    background: rgba(255, 0, 0, 0.5);
+    color: #333333; }
 
 article {
   padding: 1em; }
@@ -67,14 +73,32 @@ p {
   line-height: 1.5em;
   margin-bottom: 1em; }
 
-a {
-  color: #0000ff;
-  -webkit-transition: .25s ease;
-          transition: .25s ease; }
-  a:hover {
+.note {
+  color: rgba(51, 51, 51, 0.7);
+  margin-left: 1em; }
+  .note::before {
+    content: "*";
     color: #ff0000;
+    margin-left: -.4em;
+    position: relative;
+    left: -.5em; }
+  .note a {
+    color: rgba(51, 51, 51, 0.7);
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 255, 0.6); }
+
+a {
+  color: #333333;
+  -webkit-transition: .25s ease;
+          transition: .25s ease;
+  text-decoration: none;
+  border-bottom: 0px solid #0000ff;
+  box-shadow: inset 0 -3px 0 #0000ff; }
+  a:hover {
+    color: #ffffff;
     -webkit-transition: .25s ease;
-            transition: .25s ease; }
+            transition: .25s ease;
+    box-shadow: inset 0 -3px 0 #0000ff, 1px 1px 5px #ff0000;
+    background-color: #0000ff; }
 
 em, article em, article h2, footer p:first-of-type {
   font-family: 'Warehouse Gothic', sans-serif;
@@ -83,15 +107,25 @@ em, article em, article h2, footer p:first-of-type {
 .serif {
   font-family: 'Source Serif Pro', serif; }
 
+span.response {
+  color: #333333;
+  background-color: #f2f2ff; }
+
 .code, span.response, pre {
   font-family: 'Source Code Pro', monospace;
   line-height: 1.5em;
   background-color: #f7f7ff;
   color: blue;
-  font-size: .9em;
+  font-size: 19px;
   padding: .25em 1em .25em .5em;
   border: 1px solid blue;
   border-left: 2em solid blue; }
+  .code::-moz-selection, span.response::-moz-selection, pre::-moz-selection {
+    background: rgba(255, 0, 0, 0.8);
+    color: #ffffff; }
+  .code::selection, span.response::selection, pre::selection {
+    background: rgba(255, 0, 0, 0.8);
+    color: #ffffff; }
   .code::before, span.response::before, pre::before {
     content: "$";
     position: relative;
@@ -99,6 +133,11 @@ em, article em, article h2, footer p:first-of-type {
     color: #ffffff;
     padding: .5em 0em .5em 1em;
     margin-right: -1.6em; }
+  .code span.response, span.response span.response, pre span.response {
+    background-color: transparent; }
+  @media screen and (max-width: 700px) {
+    .code, span.response, pre {
+      font-size: 14px; } }
 
 span.code, span.response {
   padding: 0 .25em;
@@ -109,6 +148,9 @@ span.code, span.response {
 span.response {
   color: #333333;
   background-color: #f2f2ff; }
+  @media screen and (max-width: 700px) {
+    span.response {
+      font-size: 14px; } }
 
 html {
   height: 100%;
@@ -389,6 +431,9 @@ article {
       text-shadow: 1px 1px 3px #ff0000, -3px -1px 3px #0000ff, 4px 0px 3px #ff0000;
       color: #ffffff;
       padding: .05em .25em; }
+  article img {
+    width: 100%;
+    border: 1px solid #0000ff; }
 
 .section-content {
   display: none; }

@@ -39,6 +39,11 @@ body {
   -ms-font-feature-settings: "tnum";
   -webkit-font-feature-settings: "tnum";
   font-feature-settings: "tnum";
+
+	&::selection{
+		background: rgba($red, .5);
+		color: $darkgray;
+	}
 }
 
 article {
@@ -58,13 +63,37 @@ p {
 	margin-bottom: 1em;
 }
 
+.note {
+	color: rgba($darkgray, .7);
+	margin-left: 1em;
+
+	&::before{
+		content: "*";
+		color: $red;
+		margin-left: -.4em;
+		position: relative;
+		left: -.5em;
+	}
+
+	a {
+		color:rgba($darkgray, .7);
+		box-shadow: inset 0 -3px 0 rgba($blue, .6);
+	}
+}
+
 a {
-	color: $blue;
+	color: $darkgray;
 	transition: .25s ease;
+	text-decoration: none;
+	border-bottom: 0px solid $blue;
+	box-shadow: inset 0 -3px 0 $blue;
 
 	&:hover{
-		color: $red;
+		color: $white;
 		transition: .25s ease;
+		box-shadow: inset 0 -3px 0 $blue,
+			1px 1px 5px $red;
+		background-color: $blue;
 	}
 }
 
@@ -78,17 +107,28 @@ em {
 	font-family: 'Source Serif Pro', serif;
 }
 
+span.response {
+	@extend .code;
+	color: $darkgray;
+	background-color: tint( $blue, 5% );
+}
+
 .code {
 	font-family: 'Source Code Pro', monospace;
 	line-height: 1.5em;
   // background-color: rgba($blue, .025);
 	background-color: tint( $blue, 3% );
   color: blue;
-  font-size: .9em;
+  font-size: 19px;
   padding: .25em 1em .25em .5em;
   border: 1px solid blue;
   //border-top: 2px solid blue;
   border-left: 2em solid blue;
+
+	&::selection{
+		background: rgba($red, .8);
+		color: $white;
+	}
 
 
 	&::before{
@@ -100,6 +140,14 @@ em {
 		padding: .5em 0em .5em 1em;
 		margin-right: -1.6em;
 	}
+
+	span.response {
+		background-color: transparent;
+	}
+
+	 @media screen and (max-width: $tablet) {
+		 font-size: 14px;
+	 }
 }
 
 span.code {
@@ -115,7 +163,12 @@ span.response {
 	@extend .code;
 	color: $darkgray;
 	background-color: tint( $blue, 5% );
+
+	@media screen and (max-width: $tablet) {
+		font-size: 14px;
+	}
 }
+
 
 
 pre{
