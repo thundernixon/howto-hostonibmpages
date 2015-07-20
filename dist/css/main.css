@@ -489,14 +489,16 @@ footer {
   top: 2em; }
   footer p {
     color: #ffffff;
-    opacity: .75;
-    margin: 4.8em auto 1em; }
+    opacity: .75; }
     footer p:first-of-type {
       -webkit-transform: scale(.75, 6) translateY(.25em);
           -ms-transform: scale(.75, 6) translateY(.25em);
               transform: scale(.75, 6) translateY(.25em);
       letter-spacing: .2em;
       margin: 1em; }
+    footer p:nth-of-type(2) {
+      margin: 4.8em auto 1em;
+      color: #ffffff; }
     footer p a {
       color: #ffffff;
       text-decoration: none;

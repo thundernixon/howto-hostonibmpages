@@ -12,7 +12,7 @@ footer {
 
     color: $white;
     opacity: .75;
-    margin: 4.8em auto 1em;
+
     // text-shadow:
   	// 	0px 0px 10px $black,
     //   0px 0px 10px $black;
@@ -23,12 +23,13 @@ footer {
     letter-spacing: .2em;
 
     margin: 1em;
+    }
 
-    // &:last-of-type{
-    //   position: relative;
-    //   top: 2em;
-    // }
-  }
+    &:nth-of-type(2){
+      margin: 4.8em auto 1em;
+      color: $white;
+    }
+
 
     a {
       // @extend em;
