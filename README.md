@@ -5,4 +5,4 @@ This site is the replication of a tutorial I've made for how to host on the inte
 
 ## Special thanks to:
 
-(https://github.com/una/gulp-starter-env "Una's Gulp Starter Env")
+https://github.com/una/gulp-starter-env "Una's Gulp Starter Env"
